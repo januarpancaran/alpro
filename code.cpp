@@ -1,4 +1,3 @@
-// cuma test doang
 #include <iostream>
 
 using namespace std;
@@ -20,9 +19,9 @@ int main(){
         "Marmut Merah Jambu - Raditya Dika",
         "Ayahku Bukan Pembohong - Tere Liye",
         "Dear Nathan - Erisca Febriani",
-        "",
-        "", 
-        "", 
+        "Eloquent Javascript - Marjin Haverbeke",
+        "Applied Cryptography - Bruce Schneler", 
+        "Effective C - Robert C. Seacord", 
         "",
     };
 
