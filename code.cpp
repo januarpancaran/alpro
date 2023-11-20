@@ -12,6 +12,11 @@ int main(){
         "6. Exit"
     };
 
+    /*
+     *
+     * Isi list buku sebanyak-banyaknya, tambahin index arr
+     *
+     */
     string list_buku[10] = {
         "Menalar Tuhan - Franz Magnis Suseno",
         "Filosofi Teras - Henry Manampiring",
@@ -29,15 +34,28 @@ int main(){
 
     int pilih_menu_awal;
 
+    int pilih_kategori_buku;
+
     while (is_running){
+        /*
+         *
+         * Menu Awal Aplikasi
+         *
+         */
         cout << "Aplikasi Pengelolaan Buku\n";
-        for (;;){}
+        for (int i=0;i<6;i++) cout << menu_app[i] << endl;
         cout << "Pilih menu aplikasi: ";
         cin >> pilih_menu_awal;
         cout << endl;
 
         switch(pilih_menu_awal){
             case 1:
+                cout << "1. List Buku Fiksi\n2.List Buku Nonfiksi\n>> "; cin >> pilih_kategori_buku;
+                if (pilih_kategori_buku == 1){
+                    for (;;){}
+                } else {
+                    for (;;){}
+                }
                 break;
             case 2:
                 break;
