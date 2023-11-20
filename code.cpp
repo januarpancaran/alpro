@@ -14,12 +14,12 @@ int main(){
     };
 
     string list_buku[10] = {
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
+        "Menalar Tuhan - Franz Magnis Suseno",
+        "Filosofi Teras - Henry Manampiring",
+        "Bumi Manusia - Pramoedya Ananta Toer",
+        "Marmut Merah Jambu - Raditya Dika",
+        "Ayahku Bukan Pembohong - Tere Liye",
+        "Dear Nathan - Erisca Febriani",
         "",
         "", 
         "", 
