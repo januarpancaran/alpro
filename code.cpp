@@ -21,33 +21,75 @@ int main() {
 
     vector<buku> fiksi;
     buku fiksi1;
-    fiksi1.judul = "Jujutsu Kaisen";
-    fiksi1.pengarang = "Gege Akutami";
-    fiksi1.tahun_terbit = 2018;
+    fiksi1.judul = "Bumi Manusia";
+    fiksi1.pengarang = "Pramoedya Ananta Toer";
+    fiksi1.tahun_terbit = 2015;
     fiksi1.is_tersedia = true;
     fiksi.push_back(fiksi1);
 
     buku fiksi2;
-    fiksi2.judul = "One Piece";
-    fiksi2.pengarang = "Eichiiro Oda";
-    fiksi2.tahun_terbit = 1997;
+    fiksi2.judul = "Marmut Merah Jambu";
+    fiksi2.pengarang = "Raditya Dika";
+    fiksi2.tahun_terbit = 2010;
     fiksi2.is_tersedia = true;
     fiksi.push_back(fiksi2);
 
+    buku fiksi3;
+    fiksi3.judul = "Ayahku Bukan Pembohong";
+    fiksi3.pengarang = "Tere Liye";
+    fiksi3.tahun_terbit = 2011;
+    fiksi3.is_tersedia = true;
+    fiksi.push_back(fiksi3);
+
+    buku fiksi4;
+    fiksi4.judul = "Dear Nathan";
+    fiksi4.pengarang = "Erisca Febriani";
+    fiksi4.tahun_terbit = 2016;
+    fiksi4.is_tersedia = true;
+    fiksi.push_back(fiksi4);
+
     vector<buku> nonfiksi;
     buku nonfiksi1;
-    nonfiksi1.judul = "Sebuah Seni Untuk Bersikap Bodo Amat";
-    nonfiksi1.pengarang = "Mark Manson";
-    nonfiksi1.tahun_terbit = 2009;
+    nonfiksi1.judul = "Menalar Tuhan";
+    nonfiksi1.pengarang = "Franz Magnis Suseno";
+    nonfiksi1.tahun_terbit = 2006;
     nonfiksi1.is_tersedia = true;
     nonfiksi.push_back(nonfiksi1);
 
     buku nonfiksi2;
-    nonfiksi2.judul = "Bicara Itu Ada Seninya";
-    nonfiksi2.pengarang = "Oh Su Hyang";
-    nonfiksi2.tahun_terbit = 2016;
+    nonfiksi2.judul = "Filosofi Teras";
+    nonfiksi2.pengarang = "Henry Manampiring";
+    nonfiksi2.tahun_terbit = 2018;
     nonfiksi2.is_tersedia = true;
     nonfiksi.push_back(nonfiksi2);
+
+    buku nonfiksi3;
+    nonfiksi3.judul = "Eloquent Javascript";
+    nonfiksi3.pengarang = "Marijn Haverbeke";
+    nonfiksi3.tahun_terbit = 2010;
+    nonfiksi3.is_tersedia = true;
+    nonfiksi.push_back(nonfiksi3);
+
+    buku nonfiksi4;
+    nonfiksi4.judul = "Eloquent Javascript";
+    nonfiksi4.pengarang = "Marijn Haverbeke";
+    nonfiksi4.tahun_terbit = 2010;
+    nonfiksi4.is_tersedia = true;
+    nonfiksi.push_back(nonfiksi4);
+
+    buku nonfiksi5;
+    nonfiksi5.judul = "Applied Cryptography";
+    nonfiksi5.pengarang = "Bruce Schneier";
+    nonfiksi5.tahun_terbit = 1993;
+    nonfiksi5.is_tersedia = true;
+    nonfiksi.push_back(nonfiksi5);
+
+    buku nonfiksi6;
+    nonfiksi6.judul = "Effective C";
+    nonfiksi6.pengarang = "Robert C. Seacord";
+    nonfiksi6.tahun_terbit = 2020;
+    nonfiksi6.is_tersedia = true;
+    nonfiksi.push_back(nonfiksi6);
 
     vector<buku> semua_buku;
     semua_buku.insert(semua_buku.end(), fiksi.begin(), fiksi.end());
