@@ -17,17 +17,52 @@ int main(){
      * Isi list buku sebanyak-banyaknya, tambahin index arr
      *
      */
-    string list_buku[10] = {
+    string list_buku_nonfiksi[10] = {
         "Menalar Tuhan - Franz Magnis Suseno",
         "Filosofi Teras - Henry Manampiring",
-        "Bumi Manusia - Pramoedya Ananta Toer",
-        "Marmut Merah Jambu - Raditya Dika",
-        "Ayahku Bukan Pembohong - Tere Liye",
-        "Dear Nathan - Erisca Febriani",
         "Eloquent Javascript - Marjin Haverbeke",
         "Applied Cryptography - Bruce Schneler", 
         "Effective C - Robert C. Seacord", 
         "",
+    };
+
+    string list_tag_nonfiksi[10] = {
+        "#A101",
+        "#A102",
+        "#A103",
+        "#A104",
+        "#A105",
+        "#A106",
+        "#A107",
+        "#A108",
+        "#A109",
+        "#A110"
+    };
+
+    string list_buku_fiksi[10] = {
+        "Bumi Manusia - Pramoedya Ananta Toer",
+        "Marmut Merah Jambu - Raditya Dika",
+        "Ayahku Bukan Pembohong - Tere Liye",
+        "Dear Nathan - Erisca Febriani",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+    };
+
+    string list_tag_fiksi[10] = {
+        "#B101",
+        "#B102",
+        "#B103",
+        "#B104",
+        "#B105",
+        "#B106",
+        "#B107",
+        "#B108",
+        "#B109",
+        "#B110"
     };
 
     bool is_running = true;
@@ -52,9 +87,9 @@ int main(){
             case 1:
                 cout << "1. List Buku Fiksi\n2.List Buku Nonfiksi\n>> "; cin >> pilih_kategori_buku;
                 if (pilih_kategori_buku == 1){
-                    for (;;){}
+                    for (int i=0;i<=9;i++) cout << list_buku_fiksi[i]  << endl;
                 } else {
-                    for (;;){}
+                    for (int i=0;i<=9;i++) cout << list_buku_nonfiksi[i] << endl;
                 }
                 break;
             case 2:
