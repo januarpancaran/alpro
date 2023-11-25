@@ -19,14 +19,6 @@ int main() {
         "6. Exit"
     };
 
-    vector<buku> fiksi;
-    buku fiksi1;
-    fiksi1.judul = "Bumi Manusia";
-    fiksi1.pengarang = "Pramoedya Ananta Toer";
-    fiksi1.tahun_terbit = 2015;
-    fiksi1.is_tersedia = true;
-    fiksi.push_back(fiksi1);
-
     buku fiksi2;
     fiksi2.judul = "Marmut Merah Jambu";
     fiksi2.pengarang = "Raditya Dika";
