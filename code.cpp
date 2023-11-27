@@ -288,8 +288,8 @@ int main() {
                             buku_baru.is_tersedia = true;
                             cout << "Masukkan Kode Buku: ";
                             cin >> buku_baru.kode_buku;
-                            fiksi.push_back(buku_baru);
-                            semua_buku.push_back(buku_baru);
+                            fiksi.pb(buku_baru);
+                            semua_buku.pb(buku_baru);
                             cout << "Buku Fiksi berhasil ditambahkan!\n";
                             break;
                         }
@@ -305,8 +305,8 @@ int main() {
                             buku_baru.is_tersedia = true;
                             cout << "Masukkan Kode Buku: ";
                             cin >> buku_baru.kode_buku;
-                            nonfiksi.push_back(buku_baru);
-                            semua_buku.push_back(buku_baru);
+                            nonfiksi.pb(buku_baru);
+                            semua_buku.pb(buku_baru);
                             cout << "Buku Non Fiksi berhasil ditambahkan!\n";
                             break;
                         }
