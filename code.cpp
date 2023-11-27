@@ -186,18 +186,6 @@ int main() {
                 cin >> pinjam_buku;
                 cout << endl;
             
-/*
-                if(pinjam_buku >= 1 && pinjam_buku <= semua_buku.size()) {
-                    if(semua_buku[pinjam_buku - 1].is_tersedia == true) {
-                        cout << "Berhasil meminjam buku: " << semua_buku[pinjam_buku - 1].judul << endl << endl;
-                        semua_buku[pinjam_buku - 1].is_tersedia = false;
-                    } else {
-                        cout << "Buku tidak tersedia" << endl << endl;
-                    }
-                } else {
-                    cout << "Nomor buku tidak valid" << endl << endl;
-                }
-*/
                 bool buku_ditemukan = false;
 
                 for (int i = 0; i < semua_buku.size(); i++) {
@@ -206,6 +194,20 @@ int main() {
                         semua_buku[i].is_tersedia = false;
                         buku_ditemukan = true;
                         break;
+                    }
+                    
+                    for (int j = 0; j < fiksi.size(); j++) {
+                        if (fiksi[j].kode_buku == pinjam_buku) {
+                            fiksi[j].is_tersedia = false;
+                            break;
+                        }   
+                    }
+                    
+                    for (int j = 0; j < nonfiksi.size(); j++) {
+                        if (nonfiksi[j].kode_buku == pinjam_buku) {
+                            nonfiksi[j].is_tersedia = false;
+                            break;
+                        }
                     }
                 }
 
@@ -221,19 +223,6 @@ int main() {
                 cin >> kembali_buku;
                 cout << endl;
 
-                /*
-                if(kembali_buku >= 1 && kembali_buku <= semua_buku.size()) {
-                    if(semua_buku[kembali_buku - 1].is_tersedia == false) {
-                        cout << "Berhasil mengembalikan buku: " << semua_buku[kembali_buku - 1].judul << endl << endl;
-                        semua_buku[kembali_buku - 1].is_tersedia = true;
-                    } else {
-                        cout << "Buku tidak tersedia dalam daftar" << endl << endl;
-                    }
-                } else {
-                    cout << "Nomor buku tidak valid" << endl << endl;
-                }
-                */
-                
                 bool buku_dikembalikan = false;
 
                 for (int i = 0; i < semua_buku.size(); i++) {
@@ -242,12 +231,26 @@ int main() {
                             cout << "Berhasil mengembalikan buku: " << semua_buku[i].judul << endl << endl;
                             semua_buku[i].is_tersedia = true;
                             buku_dikembalikan = true;
-                            break;
+    
+                        for (int j = 0; j < fiksi.size(); j++) {
+                            if (fiksi[j].kode_buku == kembali_buku) {
+                                fiksi[j].is_tersedia = true;
+                                break;
+                            }
+                        }
+                        
+                        for (int j = 0; j < nonfiksi.size(); j++) {
+                            if (nonfiksi[j].kode_buku == kembali_buku) {
+                                nonfiksi[j].is_tersedia = true;
+                                break;
+                            }
+                        }
+                        break;
                         } else {
                             cout << "Buku tersebut belum dipinjam atau kode buku tidak valid." << endl << endl;
-                        }
-                    }
-                }
+            }
+        }
+    }
 
                 if (!buku_dikembalikan) {
                     cout << "Buku tidak ditemukan." << endl << endl;
