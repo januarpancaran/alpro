@@ -4,7 +4,7 @@
 using namespace std;
 
 const string username = "admin";
-const string password = "mletreasik";
+const string password = "manusiasetengahdewa";
 
 #define pb push_back
 
@@ -341,7 +341,6 @@ int main() {
                         }
                     }
 
-        // Find and remove the book with the specified code from fiksi
                     for (int i = 0; i < fiksi.size(); ++i) {
                         if (fiksi[i].kode_buku == hapus_buku) {
                             fiksi.erase(fiksi.begin() + i);
@@ -349,7 +348,6 @@ int main() {
                         }
                     }
 
-        // Find and remove the book with the specified code from nonfiksi
                     for (int i = 0; i < nonfiksi.size(); ++i) {
                         if (nonfiksi[i].kode_buku == hapus_buku) {
                             nonfiksi.erase(nonfiksi.begin() + i);
@@ -357,7 +355,6 @@ int main() {
                         }
                     }
 
-        // Check if the book with the specified code was not found
                     cout << "Buku dengan kode " << hapus_buku << " tidak ditemukan.\n";
                 } else {
                     cout << "Anda tidak memiliki hak akses untuk menggunakan fitur ini.\n";
