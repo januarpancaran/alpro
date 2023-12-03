@@ -28,7 +28,7 @@ int main() {
 
     vector<buku> fiksi;
 
-    buku fiksi1;
+    buku fiksi1;    
     fiksi1.judul = "Bumi Manusia";
     fiksi1.pengarang = "Pramoedya Ananta Toer";
     fiksi1.tahun_terbit = 2015;
@@ -60,6 +60,55 @@ int main() {
     fiksi4.kode_buku = "#F104";
     fiksi.pb(fiksi4);
 
+    buku fiksi5;
+    fiksi5.judul = "Laut Bercerita";
+    fiksi5.pengarang = "Leila S. Chudori";
+    fiksi5.tahun_terbit = 2017;
+    fiksi5.is_tersedia = true;
+    fiksi5.kode_buku = "#F105";
+    fiksi.pb(fiksi5);
+
+    buku fiksi6;
+    fiksi6.judul = "Cantik Itu Luka";
+    fiksi6.pengarang = "Eka Kurniawan";
+    fiksi6.tahun_terbit = 2022;
+    fiksi6.is_tersedia = true;
+    fiksi6.kode_buku = "#F106";
+    fiksi.pb(fiksi6);
+
+    buku fiksi7;
+    fiksi7.judul = "Le Petit Prince";
+    fiksi7.pengarang = "Antoine De Saint E.";
+    fiksi7.tahun_terbit = 2015;
+    fiksi7.is_tersedia = true;
+    fiksi7.kode_buku = "#F107";
+    fiksi.pb(fiksi7);
+
+    buku fiksi8;
+    fiksi8.judul = "Sang Alkemis";
+    fiksi8.pengarang = "Paulo Coelho";
+    fiksi8.tahun_terbit = 2021;
+    fiksi8.is_tersedia = true;
+    fiksi8.kode_buku = "#F108";
+    fiksi.pb(fiksi8);
+
+    buku fiksi9;
+    fiksi9.judul = "As Long as the Lemon Trees Grow";
+    fiksi9.pengarang = "Zoulfa Katouh";
+    fiksi9.tahun_terbit = 2023;
+    fiksi9.is_tersedia = true;
+    fiksi9.kode_buku = "#F108";
+    fiksi.pb(fiksi9);
+
+    buku fiksi10;
+    fiksi10.judul = "The Da Vinci Code";
+    fiksi10.pengarang = "Dan Brown";
+    fiksi10.tahun_terbit = 2013;
+    fiksi10.is_tersedia = true;
+    fiksi10.kode_buku = "#F108";
+    fiksi.pb(fiksi10);
+
+
     vector<buku> nonfiksi;
     buku nonfiksi1;
     nonfiksi1.judul = "Menalar Tuhan";
@@ -86,9 +135,9 @@ int main() {
     nonfiksi.pb(nonfiksi3);
 
     buku nonfiksi4;
-    nonfiksi4.judul = "Eloquent Javascript";
-    nonfiksi4.pengarang = "Marijn Haverbeke";
-    nonfiksi4.tahun_terbit = 2010;
+    nonfiksi4.judul = "Sebuah Seni Untuk Bersikap Bodo Amat";
+    nonfiksi4.pengarang = "Mark Manson";
+    nonfiksi4.tahun_terbit = 2009;
     nonfiksi4.is_tersedia = true;
     nonfiksi4.kode_buku = "#NF104";
     nonfiksi.pb(nonfiksi4);
@@ -108,6 +157,38 @@ int main() {
     nonfiksi6.is_tersedia = true;
     nonfiksi6.kode_buku = "#NF106";
     nonfiksi.pb(nonfiksi6);
+
+    buku nonfiksi7;
+    nonfiksi7.judul = "Practical Malware Analysis";
+    nonfiksi7.pengarang = "Michael Sikorski";
+    nonfiksi7.tahun_terbit = 2012;
+    nonfiksi7.is_tersedia = true;
+    nonfiksi7.kode_buku = "#NF107";
+    nonfiksi.pb(nonfiksi7);
+
+    buku nonfiksi8;
+    nonfiksi8.judul = "Linux Kernel Development";
+    nonfiksi8.pengarang = "Robert Love";
+    nonfiksi8.tahun_terbit = 2010;
+    nonfiksi8.is_tersedia = true;
+    nonfiksi8.kode_buku = "#NF108";
+    nonfiksi.pb(nonfiksi8);
+
+    buku nonfiksi9;
+    nonfiksi9.judul = "Reversing: Secrets of Reverse Engineering";
+    nonfiksi9.pengarang = "Eldad Eilam";
+    nonfiksi9.tahun_terbit = 2005;
+    nonfiksi9.is_tersedia = true;
+    nonfiksi9.kode_buku = "#NF109";
+    nonfiksi.pb(nonfiksi9);
+
+    buku nonfiksi10;
+    nonfiksi10.judul = "Black Hat Python";
+    nonfiksi10.pengarang = "Justin Seitz dan Tim Arnold";
+    nonfiksi10.tahun_terbit = 2021;
+    nonfiksi10.is_tersedia = true;
+    nonfiksi10.kode_buku = "#NF110";
+    nonfiksi.pb(nonfiksi10);
 
     vector<buku> semua_buku;
     semua_buku.insert(semua_buku.end(), fiksi.begin(), fiksi.end());
@@ -185,29 +266,29 @@ int main() {
                 string pinjam_buku;
                 cin >> pinjam_buku;
                 cout << endl;
-            
+    
                 bool buku_ditemukan = false;
-
+        
                 for (int i = 0; i < semua_buku.size(); i++) {
                     if (semua_buku[i].kode_buku == pinjam_buku && semua_buku[i].is_tersedia) {
                         cout << "Berhasil meminjam buku: " << semua_buku[i].judul << endl << endl;
                         semua_buku[i].is_tersedia = false;
                         buku_ditemukan = true;
-                        break;
-                    }
-                    
+    
                     for (int j = 0; j < fiksi.size(); j++) {
                         if (fiksi[j].kode_buku == pinjam_buku) {
                             fiksi[j].is_tersedia = false;
                             break;
-                        }   
-                    }
-                    
+                        }
+                    }   
+
                     for (int j = 0; j < nonfiksi.size(); j++) {
                         if (nonfiksi[j].kode_buku == pinjam_buku) {
                             nonfiksi[j].is_tersedia = false;
                             break;
                         }
+                    }
+                    break;
                     }
                 }
 
@@ -216,6 +297,7 @@ int main() {
                 }
                 break;
             }
+
 
             case 3: {
                 cout << "Masukkan kode buku yang ingin dikembalikan: ";
