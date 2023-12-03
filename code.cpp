@@ -400,47 +400,53 @@ int main() {
                 } 
                 break;
             }
-            case 5:{
+           case 5: {
                 string tanya_usn;
                 string tanya_pw;
-                
+
                 cout << "Username: ";
                 cin >> tanya_usn;
                 cout << "Password: ";
                 cin >> tanya_pw;
-                
+
                 if (tanya_usn == username && tanya_pw == password){
                     string hapus_buku;
                     cout << "Selamat datang, admin!\n";
                     cout << "Masukkan kode buku yang ingin dihapus: ";
                     cin.ignore();
                     getline(cin, hapus_buku);
-                    for (int i = 0; i < semua_buku.size(); ++i) {
-                        if (semua_buku[i].kode_buku == hapus_buku) {
-                            cout << "Buku dengan kode " << hapus_buku << " berhasil dihapus!\n";
-                            semua_buku.erase(semua_buku.begin() + i);
-                            break;
-                        }
-                    }
 
-                    for (int i = 0; i < fiksi.size(); ++i) {
-                        if (fiksi[i].kode_buku == hapus_buku) {
-                            fiksi.erase(fiksi.begin() + i);
-                            break;
-                        }
-                    }
+                    bool buku_ditemukan = false; // Tambahkan variabel ini
 
-                    for (int i = 0; i < nonfiksi.size(); ++i) {
-                        if (nonfiksi[i].kode_buku == hapus_buku) {
-                            nonfiksi.erase(nonfiksi.begin() + i);
-                            break;
-                        }
+                for (int i = 0; i < semua_buku.size(); ++i) {
+                    if (semua_buku[i].kode_buku == hapus_buku) {
+                        cout << "Buku dengan kode " << hapus_buku << " berhasil dihapus!\n";
+                        semua_buku.erase(semua_buku.begin() + i);
+                        buku_ditemukan = true; // Set flag buku_ditemukan menjadi true
+                        break;
                     }
+                }
 
+                if (!buku_ditemukan) {
                     cout << "Buku dengan kode " << hapus_buku << " tidak ditemukan.\n";
+                }
+
+                for (int i = 0; i < fiksi.size(); ++i) {
+                    if (fiksi[i].kode_buku == hapus_buku) {
+                        fiksi.erase(fiksi.begin() + i);
+                        break;
+                    }
+                }
+
+                for (int i = 0; i < nonfiksi.size(); ++i) {
+                    if (nonfiksi[i].kode_buku == hapus_buku) {
+                        nonfiksi.erase(nonfiksi.begin() + i);
+                        break;
+                    }
+                }
                 } else {
                     cout << "Anda tidak memiliki hak akses untuk menggunakan fitur ini.\n";
-                } 
+                }
                 break;
             }
             case 6:
