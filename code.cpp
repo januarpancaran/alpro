@@ -416,13 +416,13 @@ int main() {
                     cin.ignore();
                     getline(cin, hapus_buku);
 
-                    bool buku_ditemukan = false; // Tambahkan variabel ini
+                    bool buku_ditemukan = false;
 
                 for (int i = 0; i < semua_buku.size(); ++i) {
                     if (semua_buku[i].kode_buku == hapus_buku) {
                         cout << "Buku dengan kode " << hapus_buku << " berhasil dihapus!\n";
                         semua_buku.erase(semua_buku.begin() + i);
-                        buku_ditemukan = true; // Set flag buku_ditemukan menjadi true
+                        buku_ditemukan = true;
                         break;
                     }
                 }
