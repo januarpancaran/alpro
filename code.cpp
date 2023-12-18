@@ -1,12 +1,13 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>
+
+#define pb push_back
 
 using namespace std;
 
 const string username = "admin";
 const string password = "manusiasetengahdewa";
-
-#define pb push_back
 
 struct buku {
     string judul;
@@ -17,6 +18,7 @@ struct buku {
 };
 
 int main() {
+    system("clear");
     vector<string> menu_app = {
         "1. List Buku yang Tersedia",
         "2. Pinjam Buku",
@@ -97,7 +99,7 @@ int main() {
     fiksi9.pengarang = "Zoulfa Katouh";
     fiksi9.tahun_terbit = 2023;
     fiksi9.is_tersedia = true;
-    fiksi9.kode_buku = "#F108";
+    fiksi9.kode_buku = "#F109";
     fiksi.pb(fiksi9);
 
     buku fiksi10;
@@ -105,7 +107,7 @@ int main() {
     fiksi10.pengarang = "Dan Brown";
     fiksi10.tahun_terbit = 2013;
     fiksi10.is_tersedia = true;
-    fiksi10.kode_buku = "#F108";
+    fiksi10.kode_buku = "#F110";
     fiksi.pb(fiksi10);
 
 
@@ -198,7 +200,7 @@ int main() {
     int pilih_menu_awal;
 
     int pilih_kategori_buku;
-
+    
     while (is_running){
         /*
          *
@@ -313,26 +315,26 @@ int main() {
                             cout << "Berhasil mengembalikan buku: " << semua_buku[i].judul << endl << endl;
                             semua_buku[i].is_tersedia = true;
                             buku_dikembalikan = true;
-    
-                        for (int j = 0; j < fiksi.size(); j++) {
-                            if (fiksi[j].kode_buku == kembali_buku) {
-                                fiksi[j].is_tersedia = true;
-                                break;
+
+                            for (int j = 0; j < fiksi.size(); j++) {
+                                if (fiksi[j].kode_buku == kembali_buku) {
+                                    fiksi[j].is_tersedia = true;
+                                    break;
+                                }
                             }
-                        }
-                        
-                        for (int j = 0; j < nonfiksi.size(); j++) {
-                            if (nonfiksi[j].kode_buku == kembali_buku) {
-                                nonfiksi[j].is_tersedia = true;
-                                break;
+
+                            for (int j = 0; j < nonfiksi.size(); j++) {
+                                if (nonfiksi[j].kode_buku == kembali_buku) {
+                                    nonfiksi[j].is_tersedia = true;
+                                    break;
+                                }
                             }
-                        }
-                        break;
                         } else {
                             cout << "Buku tersebut belum dipinjam atau kode buku tidak valid." << endl << endl;
-            }
-        }
-    }
+                        }
+                        break;
+                    }
+                }
 
                 if (!buku_dikembalikan) {
                     cout << "Buku tidak ditemukan." << endl << endl;
@@ -367,9 +369,25 @@ int main() {
                             getline(cin, buku_baru.pengarang);
                             cout << "Masukkan Tahun Terbit: ";
                             cin >> buku_baru.tahun_terbit;
+                            
+                            bool cek_kode_buku = false;
+                            
+                            while (!cek_kode_buku){
+                                cout << "Masukkan Kode Buku: ";
+                                cin >> buku_baru.kode_buku;
+                                
+                                cek_kode_buku = true;
+                                
+                                for (int i = 0; i < semua_buku.size(); ++i) {
+                                    if (semua_buku[i].kode_buku == buku_baru.kode_buku) {
+                                        cout << "Kode buku sudah ada. Masukkan kode buku yang berbeda.\n";
+                                        cek_kode_buku = false;
+                                        break;
+                                    }
+                                }   
+                            }
+                            
                             buku_baru.is_tersedia = true;
-                            cout << "Masukkan Kode Buku: ";
-                            cin >> buku_baru.kode_buku;
                             fiksi.pb(buku_baru);
                             semua_buku.pb(buku_baru);
                             cout << "Buku Fiksi berhasil ditambahkan!\n";
@@ -384,9 +402,25 @@ int main() {
                             getline(cin, buku_baru.pengarang);
                             cout << "Masukkan Tahun Terbit: ";
                             cin >> buku_baru.tahun_terbit;
+                            
+                            bool cek_kode_buku = false;
+                            
+                            while (!cek_kode_buku) {
+                                cout << "Masukkan Kode Buku: ";
+                                cin >> buku_baru.kode_buku;
+                                
+                                cek_kode_buku = true;
+                                
+                                for (int i = 0; i < semua_buku.size(); ++i) {
+                                    if (semua_buku[i].kode_buku == buku_baru.kode_buku) {
+                                        cout << "Kode buku sudah ada. Masukkan kode buku yang berbeda.\n";
+                                        cek_kode_buku = false;
+                                        break;
+                                    }
+                                }
+                            }
+
                             buku_baru.is_tersedia = true;
-                            cout << "Masukkan Kode Buku: ";
-                            cin >> buku_baru.kode_buku;
                             nonfiksi.pb(buku_baru);
                             semua_buku.pb(buku_baru);
                             cout << "Buku Non Fiksi berhasil ditambahkan!\n";
